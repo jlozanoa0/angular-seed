@@ -10,9 +10,13 @@ angular.module('myApp.form', ['ngRoute'])
 }])
 
 .controller('formCtrl', ['$scope',function($scope) {
+  let itemsArray = [];
   
   $scope.handleSave = function(data) {
-    console.log("prueba",angular.copy(data))
+    itemsArray.push(data);
+    localStorage.setItem('listItem', JSON.stringify(itemsArray));
+
+    // console.log("prueba",angular.copy(data))
   };
 
 }]);

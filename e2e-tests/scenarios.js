@@ -39,4 +39,16 @@ describe('my app', function() {
     });
 
   });
+
+  describe('form', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#!/form');
+    });
+    it('should render form when user navigates to /form', function() {
+      expect(element.all(by.css('[ng-view] p')).first().getText()).
+        toMatch(/partial for form/);
+    });
+
+  });
 });
